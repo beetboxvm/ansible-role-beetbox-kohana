@@ -1,0 +1,22 @@
+---
+- name: Set timezone.
+  lineinfile:
+    dest: "{{ beet_root }}/application/bootstrap.php"
+    regexp: "^date_default_timezone_set"
+    line: "date_default_timezone_set('{{ kohana_timezone }}');"
+    state: present
+
+- name: Set base_url.
+  lineinfile:
+    dest: "{{ beet_root }}/application/bootstrap.php"
+    regexp: "^\t'base_url'"
+    line: "\t'base_url' => '{{ kohnana_base_url }}',"
+    state: present
+
+- name: Set salt.
+  lineinfile:
+    dest: "{{ beet_root }}/application/bootstrap.php"
+    regexp: "^// Cookie"
+    line: "Cookie::$salt = '{{ kohana_salt }}';"
+    state: present
+    backrefs: yes

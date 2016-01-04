@@ -1,0 +1,26 @@
+---
+- name: Install php-http package.
+  apt: "name=php-http state=installed"
+
+- name: Check if Kohana is already checked out.
+  stat: "path={{ beet_root }}/.git"
+  register: kohana_git
+
+- name: Checkout project.
+  git:
+    repo: "{{ kohana_repo }}"
+    dest: "{{ beet_root }}"
+    version: "{{ kohana_version }}"
+    depth: "{{ kohana_checkout_depth }}"
+    recursive: yes
+  when: kohana_checkout and not kohana_git.stat.exists
+
+# Configure Kohana.
+- include: configure.yml
+  when: kohana_configure
+
+- name: Remove install.php
+  file:
+    path: "{{ beet_root }}/install.php"
+    state: absent
+  when: kohana_remove_install

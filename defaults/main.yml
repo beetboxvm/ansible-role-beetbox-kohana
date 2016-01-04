@@ -1,0 +1,11 @@
+---
+beet_root: "/path/to/project"
+kohana_checkout: no
+kohana_repo: "https://github.com/kohana/kohana.git"
+kohana_version: "HEAD"
+kohana_checkout_depth: 1
+kohana_configure: no
+kohana_timezone: "America/Chicago"
+kohnana_base_url: /
+kohana_salt: "{{ 'beetbox' | password_hash('sha512') }}"
+kohana_remove_install: no
