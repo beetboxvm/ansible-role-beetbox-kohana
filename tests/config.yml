@@ -1,0 +1,6 @@
+---
+beet_project: kohana
+kohana_checkout: yes
+kohana_version: "v3.3.4"
+kohana_configure: yes
+kohana_remove_install: yes
