@@ -1,0 +1,10 @@
+---
+beet_domain: "kohana.local"
+beet_root: "{{ beet_base }}/docroot"
+role_path: "{{ beet_home }}/provisioning/ansible/roles/beetboxvm.kohana"
+
+beet_project: kohana
+kohana_checkout: yes
+kohana_version: "v3.3.4"
+kohana_configure: yes
+kohana_remove_install: yes

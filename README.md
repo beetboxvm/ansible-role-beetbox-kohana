@@ -1,5 +1,7 @@
 # Ansible Role: Beetbox Kohana
 
+[![CircleCI](https://circleci.com/gh/beetboxvm/ansible-role-beetbox-kohana.svg?style=svg)](https://circleci.com/gh/beetboxvm/ansible-role-beetbox-kohana)
+
 An Ansible role that creates and configures a Kohana project on beetbox.
 
 ## Requirements
@@ -46,9 +48,33 @@ Remove install script.
     
     kohana_remove_install: no
 
-## Dependencies
 
-- Beetbox -- https://github.com/drupalmel/beetbox
+# beetbox
+
+https://github.com/beetboxvm/beetbox
+
+## Requirements
+
+* [Vagrant](https://www.vagrantup.com/) >= 1.8
+* [Virtualbox](https://www.virtualbox.org/)
+* [Vagrant Hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater)
+* [Vagrant Auto-network](https://github.com/oscar-stack/vagrant-auto_network)
+
+## Quickstart
+
+  1. Open terminal (or [git bash](https://msysgit.github.io/) for windows users) and run the following commands --
+
+  ```
+  git clone https://github.com/beetboxvm/ansible-role-beetbox-kohana.git kohana && cd $_
+  vagrant up
+  ```
+
+  2. Go to http://kohana.local/
+
+  ```
+  username: admin
+  password: admin
+  ```
 
 ## License
 
