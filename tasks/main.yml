@@ -1,7 +1,4 @@
 ---
-- name: Install php-http package.
-  apt: "name=php-http state=installed"
-
 - name: Check if Kohana is already checked out.
   stat: "path={{ beet_root }}/.git"
   register: kohana_git
